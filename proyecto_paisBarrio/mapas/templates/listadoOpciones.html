@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página con Botones</title>
+</head>
+<body>
+  
+    <table class="sin-bordes"> 
+        <tr>
+            <h1>Bienvenido al menu de Vistas</h1>
+        </tr>
+        <tr>
+            <p>Seleccione una opcion en base a los botones aqui descritos</p>
+        </tr>
+        <tr>
+            <td>
+                  <!-- Botón para redirigir a gestion.html -->
+                <button onclick="redireccionarBarrios()" style="margin-right: 100px;">Listado de Barrios</button>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                <!-- Botón para redirigir a gestion2020.html -->
+                <button onclick="redireccionarPaises()">Listado de Paises</button>
+            </td>
+
+        </tr>        
+        <!-- Puedes agregar más filas y celdas según sea necesario -->
+      </table>
+
+    
+
+  <script>
+    function redireccionarBarrios() {
+      window.location.href = 'listarBarrios';
+    }
+
+    function redireccionarPaises() {
+      window.location.href = 'listarPaises';
+    }
+  </script>
+
+</body>
+</html>

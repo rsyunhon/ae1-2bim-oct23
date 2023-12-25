@@ -1,0 +1,40 @@
+{% extends "principal.html" %}
+{% block contentido %}
+
+  <h3>Lista de Barrios</h3>
+  <p><b>Número de Barrios: ({{numero_barrios}})</b> </p>
+  <table id="tabla_datos">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Ciudad</th>
+      <th>Num Calles</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for barrio in barrios  %}
+      <tr>
+        <td>{{barrio.nombre}}</td>
+        <td>{{barrio.ciudad}}</td>
+        <td>{{barrio.num_calles}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+    <div>
+      <p></p>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button onclick="redireccionarOpciones()" >Regresar</button>    
+    </div>
+  
+  </tbody>
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#tabla_datos').DataTable();
+        });
+      function redireccionarOpciones() {
+        window.history.back();
+      }
+    </script>
+{% endblock %}

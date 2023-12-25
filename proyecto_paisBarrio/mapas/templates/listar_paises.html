@@ -1,0 +1,39 @@
+{% extends "principal.html" %}
+{% block contentido %}
+
+  <h3>Lista de Paises</h3>
+  <p><b>Número de Paises: ({{numero_paises}})</b> </p>
+  <table id="tabla_datos">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Capital</th>
+      <th>Habitantes</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for pais in paises  %}
+      <tr>
+        <td>{{pais.nombre}}</td>
+        <td>{{pais.capital}}</td>
+        <td>{{pais.habitantes}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>    
+    <div>
+      <p></p>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button onclick="redireccionarOpciones()" >Regresar</button>    
+    </div>
+  </tbody>
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#tabla_datos').DataTable();
+        });
+      function redireccionarOpciones() {
+        window.history.back();
+      }
+    </script>
+{% endblock %}
